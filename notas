@@ -1,0 +1,15 @@
+Esto es una nota de que deben de hacer la primera vez que esten ocupando git y github
+
+git init
+
+inicializa el repositorio 
+
+git add NombreArchivo 
+
+git add .
+
+sirve para guardar todos los cambios de todos los archivos en el repositorio 
+
+cuando sea la primera vez que van a configurar el repositorio se usan 
+git config --global user.name "nombre de usuario" 
+git config --global user.email "email"
