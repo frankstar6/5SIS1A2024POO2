@@ -1,0 +1,130 @@
+// import static org.junit.jupiter.apl.Assertions.aserEquals;
+
+// import org.junit.jupiter.api.Test;
+import javax.util.*;
+public class ManipularPersona{
+
+/*void: ni recibe ni entrega un valor 
+Scanner:la instancia de un objeto, para mandar a llamar
+controlador: Es la manipulacion, registra las acciones y comportamientos  */
+
+import java.util.Scanner;
+
+public class ManipularPersona {
+
+    public void menu() {
+        Scanner entrada = new Scanner(System.in);
+        int opcion, edad;
+        String nombre;
+
+        AccionesPersona personas = new AccionesPersona();
+
+        Persona persona1 = new Persona(1, "Gabriela", 25);
+        personas.agregarPersona(persona1);
+        Persona persona2 = new Persona(2, "Martin", 42);
+        personas.agregarPersona(persona2);
+        Persona persona3 = new Persona(3, "Natalia", 19);
+        personas.agregarPersona(persona3);
+        Persona persona4 = new Persona(4, "Alejandro", 36);
+        personas.agregarPersona(persona4);
+        Persona persona5 = new Persona(5, "Valentina", 50);
+        personas.agregarPersona(persona5);
+
+        do {
+            System.out.println("");
+            System.out.println("Bienvenido a este programa");
+            System.out.println("Elija una opcion:");
+            System.out.println("1.- Mostrar todos los registros de personas");
+            System.out.println("2.- Registrar un nuevo objeto");
+            System.out.println("3.- Buscar ese objeto");
+            System.out.println("4.- Editar ese objeto");
+            System.out.println("5.- Borrar el objeto");
+            System.out.println("6.- Salir");
+            opcion = entrada.nextInt();
+            System.out.println("");
+
+            switch (opcion) {
+                case 1:
+                    personas.mostrarRegistro();
+                    break;
+
+                case 2:
+                    entrada.nextLine();
+                    System.out.println("Ingrese el nombre:");
+                    nombre = entrada.nextLine();
+                    System.out.println("Ingrese la edad:");
+                    edad = entrada.nextInt();
+
+                    personas.agregarPersona(new Persona(06, nombre, edad));
+                    System.out.println("");
+                    System.out.println("Registrado.");
+                    break;
+
+                case 3:
+                    System.out.println("Ingresa el ID de la persona:");
+                    int busquedaID = entrada.nextInt();
+                    System.out.println("");
+
+                    System.out.println("Persona:");
+                    personas.buscarPersona(busquedaID);
+                    break;
+
+                case 4:
+                    System.out.println("Ingresa el ID de la persona:");
+                    int editadoID = entrada.nextInt();
+
+                    System.out.println("");
+                    System.out.println("Persona:");
+                    Persona editarPersona = personas.buscarPersona(editadoID);
+                    System.out.println("");
+
+                    if(editarPersona != null) {
+                        System.out.println("Ingresa nuevo nombre:");
+                        entrada.nextLine();
+                        nombre = entrada.nextLine();
+                        System.out.println("Ingresa nueva edad:");
+                        edad = entrada.nextInt();
+
+                        editarPersona.setNombre(nombre);
+                        editarPersona.setEdad(edad);
+
+                        System.out.println("");
+                        System.out.println("Persona:");
+                        personas.editarPersona(editarPersona);
+                        System.out.println("");
+                        System.out.println("Editado correctamente");
+                    }
+                    break;
+
+                case 5:
+                    System.out.println("Ingresa el ID de la persona:");
+                    int eliminando = entrada.nextInt();
+
+                    System.out.println("");
+                    System.out.println("Persona eliminada:");
+                    Persona eliminar = personas.buscarPersona(eliminando);
+                    System.out.println("");
+
+                    if (eliminar != null) {
+                        personas.eliminarPersona(eliminar);
+                        System.out.println("Elimnado correctamente");
+                    }
+                    break;
+
+                case 6:
+                    System.out.println("Fin del programa");
+                    break;
+
+                default:
+                    System.out.println("Opcion no valida");
+                    break;
+            }
+        } while (opcion != 6);
+    }
+
+    public static void main(String[] args) {
+        ManipularPersona mostrar = new ManipularPersona();
+        mostrar.menu();
+    }
+}
+}
