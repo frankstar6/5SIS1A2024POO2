@@ -1,3 +1,6 @@
+
+import javax.swing.table.DefaultTableModel;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -13,7 +16,9 @@ public class Maintextil extends javax.swing.JFrame {
      * Creates new form Maintextil
      */
     public Maintextil() {
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -385,7 +390,9 @@ public class Maintextil extends javax.swing.JFrame {
     }//GEN-LAST:event_FECHAActionPerformed
 
     private void MUESTRAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MUESTRAActionPerformed
-        // TODO add your handling code here:
+        //mostreo de prendas 
+        String muestra = MUESTRA.getText();
+        
     }//GEN-LAST:event_MUESTRAActionPerformed
 
     private void TABLAAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_TABLAAncestorAdded
@@ -414,7 +421,7 @@ public class Maintextil extends javax.swing.JFrame {
     MODELO.setText("");
     REPORTE.setText("");
     // Limpiar la tabla
-    DefaultTableModel model = (DefaultTableModel) TABLA.getModel();
+        DefaultTableModel model = new DefaultTableModel();
     model.setRowCount(0);
         // TODO add your handling code here:
     }//GEN-LAST:event_BORRARActionPerformed
