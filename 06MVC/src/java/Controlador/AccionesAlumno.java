@@ -4,10 +4,7 @@
  */
 package Controlador;
 
-/**
- *
- * @author ilove
- */
+
 import java.sql.*;
 import Modelo.Alumno;
 import java.util.ArrayList;

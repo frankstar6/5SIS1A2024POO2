@@ -6,7 +6,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Usuario Registrado</h1>
+        <h1>usuario registrado</h1>
         <br>
         <a href="index.html" >Regresar al Menu Principal</a>
     </body>
