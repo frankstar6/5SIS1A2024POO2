@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Mi primera Conexion</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <form name="formulario" 
+                  action="guardarUsuario"
+                  method="post"    >
+                <h1>Registrar</h1>
+                <label>Nombre: </label>
+                <br>
+                <input type="text" 
+                       name="nombre" >
+                <br>
+                <label>Correo: </label>
+                <br>
+                <input type="text" 
+                       name="correo" >
+                <br>
+                <label>Contraseña: </label>
+                <br>
+                <input type="password" 
+                       name="contraseña" >
+                <br>
+                <input type="submit" name="enviar"
+                       value="Guardar usuario">
+                <input type="reset" name="borrar"
+                       value="Borrar Datos">
+            </form>
+            
+            <form name="formulario" 
+                  action="iniciarSesion"
+                  method="post"    >
+                <h1>Iniciar Sesion</h1>
+                <label>Correo: </label>
+                <br>
+                <input type="text" 
+                       name="correo" >
+                <br>
+                <label>Contraseña: </label>
+                <br>
+                <input type="password" 
+                       name="contraseña" >
+                <br>
+                <input type="submit" name="enviar"
+                       value="Iniciar Sesion">
+                <input type="reset" name="borrar"
+                       value="Borrar Datos">
+            </form>
+        </div>
+    </body>
+</html>
